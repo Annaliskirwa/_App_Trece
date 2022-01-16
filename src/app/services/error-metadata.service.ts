@@ -5,7 +5,13 @@ import { Injectable , ErrorHandler} from '@angular/core';
 })
 export class ErrorMetadataService  implements ErrorHandler{
   public handleError(error: any): void {
-      console.error("This is the error meta data service")
+    const date = new Date();
+
+    console.error({
+      timestamp: date.toISOString(),
+      message: error.message,
+      zone: error.zone
+    })
   }
 
 }
