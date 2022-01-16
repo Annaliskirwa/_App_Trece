@@ -18,4 +18,8 @@ export class UserListComponent implements OnInit {
     this.users = await this.userListService.getAll();
   }
 
+  public async update(text: string): Promise<void> {
+    this.users = await this.userListService.filter(text);
+  }
+
 }
