@@ -9,7 +9,9 @@ export class HighlightTextPipe implements PipeTransform {
     if (filter.length == 0){
       return value
     }
-    return value.replace(filter, "x");
+    const search = new RegExp(filter, "ig");
+
+    return value.replace(search, "x");
   }
 
 }
