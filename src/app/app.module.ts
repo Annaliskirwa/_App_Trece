@@ -7,14 +7,14 @@ import { UserListComponent } from './user-list/user-list.component';
 
 import { ErrorMetadataService } from './services/error-metadata.service';
 import { HighlightTextPipe } from './pipes/highlight-text.pipe';
-import { LocationIdPipe } from './pipes/location-id.pipe';
+// import { LocationIdPipe } from './pipes/location-id.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserListComponent,
     HighlightTextPipe,
-    LocationIdPipe
+    // LocationIdPipe
   ],
   imports: [
     BrowserModule,
