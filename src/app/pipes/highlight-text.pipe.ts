@@ -5,8 +5,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class HighlightTextPipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return value;
+  transform(value: string,filter: string): string {
+    if (filter.length == 0){
+      return value
+    }
+    return value.replace(filter, "x");
   }
 
 }
