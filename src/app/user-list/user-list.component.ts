@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../user/user';
 import { UserListService } from './user-list.service';
 import { WebStorageService } from '../services/web-storage.service';
+import { error } from 'console';
 
 @Component({
   selector: 'app-user-list',
@@ -21,6 +22,8 @@ export class UserListComponent implements OnInit {
     this.webStorageService.getRemote().subscribe(filtered => {
       this.users = (filtered === null) ? this.userListService.getAll(): this.userListService.filter(filtered);
 
+    }, error => {
+      console.error('An error caused by observable', error)
     })
     
   }
