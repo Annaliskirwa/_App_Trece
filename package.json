@@ -33,6 +33,8 @@
     "@cypress/schematic": "^1.6.0",
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
+    "@typescript-eslint/eslint-plugin": "^5.10.0",
+    "@typescript-eslint/parser": "^5.10.0",
     "cypress": "latest",
     "eslint": "^8.7.0",
     "jasmine-core": "~3.10.0",
