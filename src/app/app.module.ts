@@ -1,36 +1,36 @@
-import { NgModule, ErrorHandler} from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule, ErrorHandler} from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { UserListComponent } from './user-list/user-list.component';
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { UserListComponent } from "./user-list/user-list.component";
 
-import { ErrorMetadataService } from './services/error-metadata.service';
-import { HighlightTextPipe } from './pipes/highlight-text.pipe';
+import { ErrorMetadataService } from "./services/error-metadata.service";
+import { HighlightTextPipe } from "./pipes/highlight-text.pipe";
 // import { LocationIdPipe } from './pipes/location-id.pipe';
-import { HTTP_INTERCEPTORS,HttpClient ,HttpClientModule } from '@angular/common/http';
-import { UserListInterceptorService } from './mocks/user-list-interceptor.service';
+import { HTTP_INTERCEPTORS,HttpClient ,HttpClientModule } from "@angular/common/http";
+import { UserListInterceptorService } from "./mocks/user-list-interceptor.service";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    UserListComponent,
-    HighlightTextPipe,
+    declarations: [
+        AppComponent,
+        UserListComponent,
+        HighlightTextPipe,
     // LocationIdPipe
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    // HttpClient
-    HttpClientModule
-  ],
-  providers: [{
-    provide: ErrorHandler, useClass: ErrorMetadataService
-  },
-  {
-    provide: HTTP_INTERCEPTORS, useClass:UserListInterceptorService, multi: true
-  }
-],
-  bootstrap: [AppComponent]
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        // HttpClient
+        HttpClientModule
+    ],
+    providers: [{
+        provide: ErrorHandler, useClass: ErrorMetadataService
+    },
+    {
+        provide: HTTP_INTERCEPTORS, useClass:UserListInterceptorService, multi: true
+    }
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
