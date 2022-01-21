@@ -9,9 +9,9 @@ module.exports = {
     "extends": [
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
-        "plugin: import/errors",
-        "plugin: import/warnings",
-        "plugin: import/typescript",
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:import/typescript",
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -20,7 +20,7 @@ module.exports = {
     "plugins": [
         "@typescript-eslint",
         "prefer-arrow",
-        "js-doc"
+        "jsdoc"
     ],
     "rules": {
         "indent": [
