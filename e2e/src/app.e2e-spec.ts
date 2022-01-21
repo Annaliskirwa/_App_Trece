@@ -1,3 +1,4 @@
+import { ElementArrayFinder, ElementFinder } from 'protractor';
 import { AppPage } from './app.po'
 
 describe('User List App',()=>{
@@ -15,6 +16,21 @@ describe('User List App',()=>{
         const users = page.getListItems();
         expect(await users.count()).toBe(16);
 
+    });
+
+    describe('filter Input', ()=>{
+        let input: ElementFinder;
+        let items: ElementArrayFinder;
+
+        beforeEach(async()=>{
+            input = page.getInput();
+            items = page.getListItems();
+            await input.sendKeys('davis');
+        });
+
+        it('should filter the list on the user search', async()=>{
+            expect(await items.count()).toBe(2);
+        });
     });
 
 });
