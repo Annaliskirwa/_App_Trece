@@ -1,4 +1,4 @@
-import { ElementArrayFinder, ElementFinder } from 'protractor';
+import { ElementArrayFinder, ElementFinder, by } from 'protractor';
 import { AppPage } from './app.po'
 
 describe('User List App',()=>{
@@ -31,6 +31,12 @@ describe('User List App',()=>{
         it('should filter the list on the user search', async()=>{
             expect(await items.count()).toBe(2);
         });
+        it('should highlight filter text', async()=>{
+            (await items).forEach(item =>{
+                const span = item.element(by.css('span'));
+                expect(span.getAttribute('class')).toBe('highlight-text');
+            })
+        })
     });
 
 });
