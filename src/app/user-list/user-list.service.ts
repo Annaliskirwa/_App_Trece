@@ -7,6 +7,7 @@ import { User } from "../user/user";
 })
 export class UserListService {
 
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
     constructor() { }
 
     public async getAll(): Promise<User[]> {

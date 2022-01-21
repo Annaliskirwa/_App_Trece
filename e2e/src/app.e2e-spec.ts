@@ -1,7 +1,7 @@
-import { ElementArrayFinder, ElementFinder, by } from 'protractor';
-import { AppPage } from './app.po'
+import { ElementArrayFinder, ElementFinder, by } from "protractor";
+import { AppPage } from "./app.po";
 
-describe('User List App',()=>{
+describe("User List App",()=>{
     const page = new AppPage();
 
     beforeEach(async ()=>{
@@ -10,9 +10,9 @@ describe('User List App',()=>{
     });
     it("should have aaaa header", async()=>{
         const text = await page.getHeaderText();
-        expect(text).toBe('Active Users');
+        expect(text).toBe("Active Users");
     });
-    it('should have 16 users on page load', async()=>{
+    it("should have 16 users on page load", async()=>{
         const users = page.getListItems();
         expect(await users.count()).toBe(16);
 
